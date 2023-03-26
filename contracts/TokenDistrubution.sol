@@ -3,21 +3,27 @@ pragma solidity ^0.8.7;
 
 contract TokenDistrubution {
     /* Type Declarations */
-
     enum Role {
         Owner,
         User
     }
 
     /* State Variables*/
-    address owner;
+    address private s_owner;
+    mapping(address => uint) private s_balances;
 
     constructor(address _owner) {
-        owner = _owner;
+        s_owner = _owner;
     }
+
+    function joinMechanism() external {
+        //s_balances[msg.sender] = 0;
+    }
+
+    function createTokens() internal {}
 
     //add users with initial stake
     //create tokens --> ERC20
-    //on timestamp distribute tokens --> chainlink?
+    //on timestamp distribute percentage of tokens (as reward for some users) --> chainlink?
     //withdraw token value
 }
