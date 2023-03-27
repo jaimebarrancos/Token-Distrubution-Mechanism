@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.19;
 
-contract TokenDistrubution {
+contract Distrubution {
     /* Type Declarations */
     enum Role {
         Owner,
@@ -10,7 +10,6 @@ contract TokenDistrubution {
 
     /* State Variables*/
     address private s_owner;
-    mapping(address => uint) private s_balances;
 
     constructor(address _owner) {
         s_owner = _owner;
