@@ -50,13 +50,14 @@ contract TokenDistrubutionMechanism is ERC20 {
         if (spender == address(0)) {
             revert AddressIsZero();
         }
+
         emit Approval(msg.sender, spender, amount);
 
         return true;
     }
 
     ///transfer tokens
-    ///@dev from account who calls the function to other account
+    ///@dev from account who calls the function to recipient
     function transfer(
         address recipient,
         uint256 amount
