@@ -5,6 +5,9 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 //TODO: using SafeMath for uint256;
 
+error AddressIsZero();
+error NotEnoughBalance();
+
 contract TokenDistrubutionMechanism is ERC20 {
     /* State Variables */
     uint constant INNITIAL_SUPPLY = 10 * (10 ** 18);
@@ -46,12 +49,19 @@ contract TokenDistrubutionMechanism is ERC20 {
         transferFrom(sender, recipient, amount);
     }
 
-    ///@dev transfer from contract balance to account
+    ///@dev transfer the token from account A to account B
 
     function transfer(
         address recipient,
         uint256 amount
     ) public override returns (bool) {
+        if (recipient == address(0)) {
+            revert AddressIsZero();
+        }
+        if (_balances[msg.sender] < amount) {
+            revert NotEnoughBalance();
+        }
+
         _balances[msg.sender] = _balances[msg.sender] - amount;
         _balances[recipient] = _balances[recipient] + amount;
 
