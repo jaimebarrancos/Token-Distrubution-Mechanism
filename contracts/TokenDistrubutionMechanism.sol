@@ -11,8 +11,8 @@ error NotEnoughBalance();
 contract TokenDistrubutionMechanism is ERC20 {
     /* State Variables */
     uint constant INNITIAL_SUPPLY = 10 * (10 ** 18);
-    mapping(address => uint) private _balances;
-    mapping(address => mapping(address => uint256)) private _allowances;
+    mapping(address => uint) private s_balances;
+    mapping(address => mapping(address => uint256)) private s_allowances;
 
     uint256 private _totalSupply;
 
@@ -24,33 +24,39 @@ contract TokenDistrubutionMechanism is ERC20 {
         _mint(msg.sender, INNITIAL_SUPPLY);
     }
 
-    function totalSupply() public view override returns (uint256) {}
-
-    function balanceOf(address tokenOwner) public view override returns (uint) {
-        return _balances[tokenOwner];
+    function totalSupply() public view override returns (uint256) {
+        return _totalSupply;
     }
 
-    function allowance(
-        address tokenOwner,
-        address spender
-    ) public view override returns (uint) {}
+    function balanceOf(address account) public view override returns (uint) {
+        return s_balances[account];
+    }
 
+    ///View an allowance
+    ///@dev anyone can view anyone's allowance
+    ///@dev spender needs to call transferFrom
+    function allowance(
+        address owner,
+        address spender
+    ) public view override returns (uint) {
+        return s_allowances[owner][spender];
+    }
+
+    ///approves an amount of tokens that the spender can control over the caller's tokens
     function approve(
         address spender,
-        uint tokens
-    ) public override returns (bool) {}
+        uint amount
+    ) public override returns (bool) {
+        if (spender == address(0)) {
+            revert AddressIsZero();
+        }
+        emit Approval(msg.sender, spender, amount);
 
-    ///@dev transfer between accounts
-    function _transfer(
-        address sender,
-        address recipient,
-        uint256 amount
-    ) internal override {
-        transferFrom(sender, recipient, amount);
+        return true;
     }
 
-    ///@dev transfer the token from account A to account B
-
+    ///transfer tokens
+    ///@dev from account who calls the function to other account
     function transfer(
         address recipient,
         uint256 amount
@@ -58,12 +64,12 @@ contract TokenDistrubutionMechanism is ERC20 {
         if (recipient == address(0)) {
             revert AddressIsZero();
         }
-        if (_balances[msg.sender] < amount) {
+        if (s_balances[msg.sender] < amount) {
             revert NotEnoughBalance();
         }
 
-        _balances[msg.sender] = _balances[msg.sender] - amount;
-        _balances[recipient] = _balances[recipient] + amount;
+        s_balances[msg.sender] = s_balances[msg.sender] - amount;
+        s_balances[recipient] = s_balances[recipient] + amount;
 
         return true;
     }
