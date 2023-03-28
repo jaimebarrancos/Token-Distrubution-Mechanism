@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script src="./basic.js" ; type="module"></script>
+  </head>
 
-<head>
-    <title>Dapp do Jaime</title>
-</head>
-
-<body>
+  <body>
     Heello
-
     <!-- a fingir que apenas existe MetaMask -->
-    <script>
-        async function connect() {
-            if (typeof window.ethereum !== "undefined") {
-                window.ethereum.request({ method: "eth_requestAccounts" })
-                console.log("MetaMask found")
-
-            }
-            else { console.log("no metamask!") }
-        }
-    </script>
-
-    <button id="connectButton" onclick="connect()"> Connect </button>
-    </button>
-</body>
-
+    <button id="connectButton">Connect</button>
+  </body>
 </html>
