@@ -44,8 +44,8 @@
       ]
     },
     "/mnt/c/Users/jaime/Documents/GitHub/Token-Distrubution-Mechanism/contracts/TokenDistrubutionMechanism.sol": {
-      "lastModificationDate": 1679953430091,
-      "contentHash": "c3e480671971181edefbda0cb728164a",
+      "lastModificationDate": 1680114454997,
+      "contentHash": "5a944db9aef371db81fa71325f4acc15",
       "sourceName": "contracts/TokenDistrubutionMechanism.sol",
       "solcConfig": {
         "version": "0.8.19",

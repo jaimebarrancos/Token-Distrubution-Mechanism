@@ -22,6 +22,7 @@ contract TokenDistrubutionMechanism is ERC20 {
 
     constructor() ERC20("TokenDistrubutionMechanism", "TDM") {
         _mint(msg.sender, INNITIAL_SUPPLY);
+        _totalSupply = INNITIAL_SUPPLY;
     }
 
     function totalSupply() public view override returns (uint256) {
