@@ -15,7 +15,7 @@ async function deployFunction() {
 
   await deploy("TokenDistrubutionMechanism", {
     from: deployer,
-    args: ["Hello"],
+    args: [],
     log: true,
   })
 }
@@ -27,5 +27,11 @@ module.exports.default = deployFunction
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments
   const { deployer } = await getNamedAccounts()
+
+    await deploy("TokenDistrubutionMechanism", {
+    from: deployer,
+    args: [],
+    log: true,
+  })
 }
 */
