@@ -25,9 +25,7 @@ contract TokenDistrubutionMechanism is ERC20 {
         _totalSupply = INNITIAL_SUPPLY;
     }
 
-    function totalSupply() public view override returns (uint256) {
-        return _totalSupply;
-    }
+
 
     function balanceOf(address account) public view override returns (uint) {
         return s_balances[account];
@@ -75,4 +73,26 @@ contract TokenDistrubutionMechanism is ERC20 {
 
         return true;
     }
+
+
+    // view/pure functions
+
+    function name() override public view returns (string memory) {
+        return _name;
+    }
+
+    function symbol() override view public returns(string memory) {
+        return _symbol;
+    }
+
+    //why decimals pure but totalsupply view?
+    function decimals() public pure override returns(uint8) {
+        return _decimals;
+    }
+
+    function totalSupply() public view override returns (uint256) {
+        return _totalSupply;
+    }
+
+
 }
