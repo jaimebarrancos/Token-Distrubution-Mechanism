@@ -1,5 +1,5 @@
 import { ethers } from "./ethers.js"
-import { abi, contractAddress } from "./constants.js"
+import { abi, contractAddress } from "../test/constants.js"
 
 const connectButton = document.getElementById("connectButton")
 const getTotalSupplyButton = document.getElementById("getTotalSupplyButton")

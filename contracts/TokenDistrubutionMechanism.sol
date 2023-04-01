@@ -25,8 +25,6 @@ contract TokenDistrubutionMechanism is ERC20 {
         _totalSupply = INNITIAL_SUPPLY;
     }
 
-
-
     function balanceOf(address account) public view override returns (uint) {
         return s_balances[account];
     }
