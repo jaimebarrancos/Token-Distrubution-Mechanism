@@ -22,13 +22,13 @@ contract TokenDistrubutionMechanism is ERC20 {
 
     constructor() ERC20("TokenDistrubutionMechanism", "TDM") {
         _mint(msg.sender, INNITIAL_SUPPLY);
-        _totalSupply = INNITIAL_SUPPLY;
     }
+/*
 
     function balanceOf(address account) public view override returns (uint) {
         return s_balances[account];
     }
-
+    
     ///View an allowance
     ///@dev anyone can view anyone's allowance
     ///@dev spender needs to call transferFrom
@@ -91,6 +91,6 @@ contract TokenDistrubutionMechanism is ERC20 {
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
     }
-
+    */
 
 }
