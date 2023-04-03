@@ -18,6 +18,16 @@ describe("Token Distrubution Mechanism unit tests", async () => {
     })
   })
 
+  describe("transfers", async () => {
+    it("receiving account gets amount sent", async () => {
+      accounts = await ethers.getSigners()
+
+      amount = (10 ** 18).toString()
+      await TDMContract.transfer(accounts[1].address, amount)
+      assert.equal(await TDMContract.balanceOf(accounts[1].address), amount)
+    })
+  })
+
   describe("View/Pure methods", async () => {
     it("check name", async () => {
       const name = await TDMContract.name()
