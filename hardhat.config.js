@@ -1,5 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("hardhat-deploy")
+const INNITIAL_SUPPLY = 10 * 10 ** 18
 
 module.exports = {
   gasReporter: {
@@ -16,4 +17,5 @@ module.exports = {
   },
   solidity: "0.8.18",
   solidity: "0.8.19",
+  INNITIAL_SUPPLY,
 }

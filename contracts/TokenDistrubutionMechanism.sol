@@ -14,16 +14,15 @@ contract TokenDistrubutionMechanism is ERC20 {
     mapping(address => uint) private s_balances;
     mapping(address => mapping(address => uint256)) private s_allowances;
 
+    constructor() ERC20("TokenDistrubutionMechanism", "TDM") {
+        _mint(msg.sender, INNITIAL_SUPPLY);
+    }
+/*
     uint256 private _totalSupply;
 
     string private _name = "TokenDistrubutionMechanism";
     string private _symbol = "TDM";
     uint8 private immutable _decimals = 18;
-
-    constructor() ERC20("TokenDistrubutionMechanism", "TDM") {
-        _mint(msg.sender, INNITIAL_SUPPLY);
-    }
-/*
 
     function balanceOf(address account) public view override returns (uint) {
         return s_balances[account];

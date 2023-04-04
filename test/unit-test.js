@@ -1,5 +1,6 @@
 const { assert, expect } = require("chai")
 const { ethers } = require("hardhat")
+const { INNITIAL_SUPPLY } = require("../hardhat.config")
 
 //yarn hardhat test
 //yarn hardhat test --grep "assert message example"
@@ -14,7 +15,7 @@ describe("Token Distrubution Mechanism unit tests", async () => {
   describe("constructor", async () => {
     it("owner has right amount of funds", async () => {
       accounts = await ethers.getSigners()
-      assert.equal(await TDMContract.balanceOf(accounts[0].address), 10 * 10 ** 18)
+      assert.equal(await TDMContract.balanceOf(accounts[0].address), INNITIAL_SUPPLY)
     })
   })
 
@@ -22,10 +23,11 @@ describe("Token Distrubution Mechanism unit tests", async () => {
     it("receiving account gets amount sent", async () => {
       accounts = await ethers.getSigners()
 
-      amount = (10 ** 18).toString()
+      amount = (INNITIAL_SUPPLY / 10).toString()
       await TDMContract.transfer(accounts[1].address, amount)
       assert.equal(await TDMContract.balanceOf(accounts[1].address), amount)
     })
+    it("emits an transfer event, when an transfer occurs", async () => {})
   })
 
   describe("View/Pure methods", async () => {
