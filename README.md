@@ -35,38 +35,17 @@ Markup : <details>
 #### Yarn / Npm
 
 </p>
-
 </details>
-
-### Languages
-
-#### Javascript for deployment, unit-testing, frond-end development and configurations.
-
-#### Shell syntax for package management, tests and deployment.
-
-#### Solidity for smart contract development including the following technologies: ERC20 Token,
-
-### Development tools
-
-#### Hardhat
-
-#### Foundry
-
-#### Open Zappelin
-
-#### Ethers
-
-#### Metamask
-
-#### Yarn / Npm
 
 Markup : <details>
 
-<summary>Workflow enviroments</summary><p>
+<summary>
 
-### Github
+## #Workflow enviroments</summary><p>
 
-### VSCode
+#### Github
+
+#### VSCode
 
 </p>
 </details>
