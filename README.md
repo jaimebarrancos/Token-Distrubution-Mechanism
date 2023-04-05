@@ -8,7 +8,9 @@ Markup : <details>
 
 <summary>
 
-### Expertise required to build</summary>
+### Expertise required to build
+
+</summary>
 
 <p>
 
@@ -22,17 +24,12 @@ Markup : <details>
 
 ### Development tools
 
-#### Hardhat
-
-#### Foundry
-
-#### Open Zappelin
-
-#### Ethers
-
-#### Metamask
-
-#### Yarn / Npm
+Markup : _ Hardhat
+_ Foundry
+_ Open Zappelin
+_ Ethers
+_ Metamask
+_ Yarn / Npm
 
 </p>
 </details>
@@ -43,9 +40,12 @@ Markup : <details>
 
 ## #Workflow enviroments</summary><p>
 
-#### Github
-
-#### VSCode
+Markup : Github
+VSCode
+_ Open Zappelin
+_ Ethers
+_ Metamask
+_ Yarn / Npm
 
 </p>
 </details>
