@@ -28,8 +28,10 @@ It contains unit-testing, smart contracts, a front end simple website, penetrati
 
 #### Yarn / Npm
 
-### Workflow enviroments
+Markup : <details>
 
-#### Github
-
-#### VSCode
+<summary>Workflow enviroments</summary>
+    <p>
+    Github
+    VSCode
+    </p></details>
