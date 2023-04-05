@@ -4,8 +4,6 @@ This project demonstrates an ERC20 Token creation with a distrubution protocol w
 
 It contains unit-testing, smart contracts, a front end simple website, penetration testing and custom configs.
 
-Markup :
-
 <details>
 
 <summary>
