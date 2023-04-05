@@ -4,7 +4,9 @@ This project demonstrates an ERC20 Token creation with a distrubution protocol w
 
 It contains unit-testing, smart contracts, a front end simple website, penetration testing and custom configs.
 
-Markup : <details>
+Markup :
+
+<details>
 
 <summary>
 
@@ -24,28 +26,23 @@ Markup : <details>
 
 ### Development tools
 
-Markup : _ Hardhat
-_ Foundry
-_ Open Zappelin
-_ Ethers
-_ Metamask
-_ Yarn / Npm
+##### Hardhat
 
-</p>
-</details>
+##### Foundry
 
-Markup : <details>
+##### Open Zappelin
 
-<summary>
+##### Ethers
 
-## #Workflow enviroments</summary><p>
+##### Metamask
 
-Markup : Github
-VSCode
-_ Open Zappelin
-_ Ethers
-_ Metamask
-_ Yarn / Npm
+##### Yarn / Npm
+
+### Workflow enviroments
+
+##### Github
+
+##### VSCode
 
 </p>
 </details>
