@@ -11,8 +11,6 @@ error NotEnoughBalance();
 contract TokenDistrubutionMechanism is ERC20 {
     /* State Variables */
     uint constant INNITIAL_SUPPLY = 10 * (10 ** 18);
-    mapping(address => uint) private s_balances;
-    mapping(address => mapping(address => uint256)) private s_allowances;
 
     constructor() ERC20("TokenDistrubutionMechanism", "TDM") {
         _mint(msg.sender, INNITIAL_SUPPLY);

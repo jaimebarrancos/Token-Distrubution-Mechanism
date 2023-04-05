@@ -4,7 +4,27 @@ const { INNITIAL_SUPPLY } = require("../hardhat.config")
 
 //yarn hardhat test
 //yarn hardhat test --grep "assert message example"
-describe("Token Distrubution Mechanism unit tests", async () => {
+
+describe("Distrubution Mechanism unit tests", async () => {
+  let DistrubutionContract, accounts
+  beforeEach(async () => {
+    accounts = await ethers.getSigners()
+    DistrubutionContractFactory = await ethers.getContractFactory("Distrubution")
+    DistrubutionContract = await DistrubutionContractFactory.deploy(accounts[0].address)
+  })
+  describe("user creation", async () => {
+    //TODO: not enough fee / no fee
+    // contract gained new tokens
+    it("new user has 5 points", async () => {
+      await DistrubutionContract.createUser(accounts[2].address, {
+        value: (10 ** 18).toString(),
+      })
+      assert.equal(await DistrubutionContract.pointsOf(accounts[2].address), 5)
+    })
+  })
+})
+
+describe("Distrubution Mechanism Token unit tests", async () => {
   let TDMContract
 
   beforeEach(async () => {
