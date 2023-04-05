@@ -6,8 +6,11 @@ It contains unit-testing, smart contracts, a front end simple website, penetrati
 
 Markup : <details>
 
-<summary>Expertise required to build</summary>
-    <p>
+<summary>
+
+### Expertise required to build</summary>
+
+<p>
 
 ### Languages
 
@@ -31,7 +34,9 @@ Markup : <details>
 
 #### Yarn / Npm
 
-    </p></details>
+</p>
+
+</details>
 
 ### Languages
 
@@ -57,11 +62,11 @@ Markup : <details>
 
 Markup : <details>
 
-<summary>Workflow enviroments</summary>
-    <p>
+<summary>Workflow enviroments</summary><p>
 
 ### Github
 
 ### VSCode
 
-    </p></details>
+</p>
+</details>
