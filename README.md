@@ -20,7 +20,7 @@ $ yarn
 
 <summary>
 
-## Expertise required to build
+## What you learn by developing this project
 
 </summary>
 

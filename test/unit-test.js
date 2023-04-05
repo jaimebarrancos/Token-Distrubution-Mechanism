@@ -2,9 +2,13 @@ const { assert, expect } = require("chai")
 const { ethers } = require("hardhat")
 const { INNITIAL_SUPPLY } = require("../hardhat.config")
 
+///for virtual test in hardhat network
 //yarn hardhat test
 //yarn hardhat test --grep "assert message example"
 
+///for testing in localhost
+//yarn hardhat --network localhost test
+//yarn hardhat --network localhost test --grep "assert message example"
 describe("Distrubution Mechanism unit tests", async () => {
   let DistrubutionContract, accounts
   beforeEach(async () => {
