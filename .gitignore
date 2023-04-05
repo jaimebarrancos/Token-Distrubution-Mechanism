@@ -3,4 +3,4 @@ artifacts
 cache
 deployments
 .notes.md
-.env.variables
+.env
