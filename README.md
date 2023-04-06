@@ -32,7 +32,7 @@ $ yarn
 
 ##### Shell syntax for package management, tests and deployment.
 
-##### Solidity for smart contract development including the following technologies: ERC20 Token,
+##### Solidity for smart contract development for an ERC20 Token.
 
 ### Development tools
 

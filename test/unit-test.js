@@ -6,16 +6,18 @@ const { INNITIAL_SUPPLY } = require("../hardhat.config")
 //yarn hardhat test
 //yarn hardhat test --grep "assert message example"
 
-///for testing in localhost
-//yarn hardhat --network localhost test
-//yarn hardhat --network localhost test --grep "assert message example"
+///for testing other network (like goerli or localhost)
+//yarn hardhat --network goerli test
+//yarn hardhat --network goerli test --grep "assert message example"
 describe("Distrubution Mechanism unit tests", async () => {
   let DistrubutionContract, accounts
+
   beforeEach(async () => {
     accounts = await ethers.getSigners()
     DistrubutionContractFactory = await ethers.getContractFactory("Distrubution")
     DistrubutionContract = await DistrubutionContractFactory.deploy(accounts[0].address)
   })
+
   describe("user creation", async () => {
     //TODO: not enough fee / no fee
     // contract gained new tokens

@@ -20,6 +20,7 @@ contract Distrubution is TokenDistrubutionMechanism{
     uint8 private constant NEW_USER_MINTED_TOKENS = 10; 
     address private s_owner;
     mapping(address => uint256) s_points;
+    mapping(address => uint256) s_guess;
 
     constructor(address _owner) {
         s_owner = _owner;
@@ -37,12 +38,24 @@ contract Distrubution is TokenDistrubutionMechanism{
         _mint(address(this), NEW_USER_MINTED_TOKENS);
         s_points[newUser] = NEW_USER_POINTS;
     }
-    
+
+    function givePoints(address user, uint amount) internal {
+        s_points[user] += amount;
+    }
+
+
+    function chooseRandomNumber() internal {
+        //get random number from 1 - 4
+        //if a user got it right rewardUser
+        //
+
+    }
 
     // View / Pure functions
     function pointsOf(address userAddress) public view returns(uint256){
         return s_points[userAddress];
     }
+
 
     //on timestamp distribute percentage of tokens (as reward for some users) --> chainlink?
     //withdraw token value
