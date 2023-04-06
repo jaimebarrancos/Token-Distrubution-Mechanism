@@ -1,7 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("hardhat-deploy")
 require("dotenv").config()
-
 //console.log(process.env)
 const INNITIAL_SUPPLY = 10 * 10 ** 18
 
@@ -26,13 +25,26 @@ module.exports = {
       default: 0, //  first account is deployer
     },
   },
-  solidity: "0.8.18",
-  solidity: "0.8.19",
-  defaultNetwork: "hardhat",
+  defaultNetwork: "localhost",
   networks: {
+    hardhat: {
+      /* for forking
+      forking: {
+        url: process.env.ALCHEMY_GOERLI_RPC_URL,
+        enabled: true,
+      },
+      */
+      chainId: 31337,
+    },
+    localhost: {
+      url: "http://127.0.0.1:8545/", //being very explicit
+      chainId: 31337,
+    },
     goerli: {
-      url: "http://127.0.0.1:8545/",
       forking: { url: process.env.ALCHEMY_GOERLI_RPC_URL },
+      //    accounts: {
+      //     mnemonic: MNEMONIC
+      //   },
     },
   },
   /*
@@ -45,4 +57,6 @@ module.exports = {
   },
   */
   INNITIAL_SUPPLY,
+  solidity: "0.8.18",
+  solidity: "0.8.19",
 }
