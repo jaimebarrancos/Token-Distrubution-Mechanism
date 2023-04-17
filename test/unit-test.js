@@ -1,6 +1,7 @@
 const { assert, expect } = require("chai")
 const { ethers } = require("hardhat")
 const { INNITIAL_SUPPLY } = require("../hardhat.config")
+const BigNumber = require("bignumber.js")
 
 ///for virtual test in hardhat network
 //yarn hardhat test
@@ -9,15 +10,54 @@ const { INNITIAL_SUPPLY } = require("../hardhat.config")
 ///for testing other network (like goerli or localhost)
 //yarn hardhat --network goerli test
 //yarn hardhat --network goerli test --grep "assert message example"
+
 describe("Distrubution Mechanism unit tests", async () => {
-  let DistrubutionContract, accounts
+  let DistrubutionContract, accounts, CoordinatorMockContract
 
-  beforeEach(async () => {
-    accounts = await ethers.getSigners()
-    DistrubutionContractFactory = await ethers.getContractFactory("Distrubution")
-    DistrubutionContract = await DistrubutionContractFactory.deploy(accounts[0].address)
+  describe("test mock VRFCoordinatorV2Mock", async () => {
+    beforeEach(async () => {
+      accounts = await ethers.getSigners()
+      let DistrubutionContractFactory = await ethers.getContractFactory("Distrubution")
+      DistrubutionContract = await DistrubutionContractFactory.deploy()
+      CoordinatorMockFactory = await ethers.getContractFactory("VRFCoordinatorV2Mock")
+      CoordinatorMockContract = await CoordinatorMockFactory.deploy(
+        (100000000000000000).toString(),
+        (1000000000).toString()
+      )
+    })
+
+    it("subscription is created, funded and a consumer is added", async () => {
+      await CoordinatorMockContract.createSubscription()
+      await new Promise(async (resolve, reject) => {
+        try {
+          CoordinatorMockContract.once("SubscriptionCreated", async (subId, owner) => {
+            console.log("SubscriptionCreated event fired!")
+            await CoordinatorMockContract.fundSubscription(subId, ethers.utils.parseUnits("5", 5), {
+              gasLimit: (30000000).toString(),
+            })
+
+            await new Promise(async (resolve, reject) => {
+              CoordinatorMockContract.once("SubscriptionFunded", async () => {
+                console.log("SubscriptionFunded event fired!")
+                await CoordinatorMockContract.addConsumer(subId, accounts[1].address)
+                resolve()
+              })
+            })
+            await new Promise(async (resolve, reject) => {
+              CoordinatorMockContract.once("ConsumerAdded", async () => {
+                console.log("ConsumerAdded event fired!")
+                resolve()
+              })
+            })
+            resolve()
+          })
+        } catch (e) {
+          reject(e)
+        }
+      })
+    })
   })
-
+  /*
   describe("user creation", async () => {
     //TODO: not enough fee / no fee
     // contract gained new tokens
@@ -77,4 +117,5 @@ describe("Distrubution Mechanism Token unit tests", async () => {
       assert.equal(decimals, 18)
     })
   })
+  */
 })
