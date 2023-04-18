@@ -26,7 +26,7 @@ $ yarn
 
 <p>
 
-### Languages
+### Development
 
 1. Back-end blockchain smart contract development.
 
@@ -46,9 +46,15 @@ $ yarn
      - Open Zappelin
 
 2. Front-end user interface and communication with blockchain.
-   2.1 NextJs react based website
 
-   - web3uikit
+   - Simple and pretty website
+
+     - NextJs react
+     - web3uikit
+
+   - Interacting with blockchain and smart contracts
+
+     - moralis
 
 ### Workflow tools / environments
 
