@@ -55,6 +55,7 @@ $ yarn
    - Interacting with blockchain and smart contracts
 
      - moralis
+     - network agnostic, meaning front end works on no matter what network you use
 
 ### Workflow tools / environments
 
