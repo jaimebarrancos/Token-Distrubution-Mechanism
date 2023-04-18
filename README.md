@@ -28,31 +28,31 @@ $ yarn
 
 ### Languages
 
-##### Javascript for deployment, unit-testing, frond-end development and configurations.
+1. Javascript for deployment, unit-testing and configurations.
 
-##### Shell syntax for package management, tests and deployment.
+2. Shell syntax for package management, tests and deployment.
 
-##### Solidity for smart contract development for an ERC20 Token.
+3. Solidity for smart contract development for an ERC20 Token.
 
 ### Development tools
 
-##### Hardhat
+1. Hardhat
 
-##### Foundry
+2. Foundry
 
-##### Open Zappelin
+3. Open Zappelin
 
-##### Ethers
+4. Ethers
 
-##### Metamask
+5. Metamask
 
-##### Yarn / Npm
+6. Yarn / Npm
 
 ### Workflow enviroments
 
-##### Github
+1. Github
 
-##### VSCode
+2. VSCode
 
 </p>
 </details>
