@@ -37,21 +37,15 @@ $ yarn
 ### Development tools
 
 1. Hardhat
-
 2. Foundry
-
 3. Open Zappelin
-
 4. Ethers
-
 5. Metamask
-
 6. Yarn / Npm
 
 ### Workflow enviroments
 
 1. Github
-
 2. VSCode
 
 </p>
