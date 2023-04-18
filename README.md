@@ -28,25 +28,34 @@ $ yarn
 
 ### Languages
 
-1. Javascript for deployment, unit-testing and configurations.
+1. Back-end blockchain smart contract development.
 
-2. Shell syntax for package management, tests and deployment.
+   - Javascript for deployment, unit-testing and configurations.
+     - Hardhat
+     - Foundry
 
-3. Solidity for smart contract development for an ERC20 Token.
+   * Ethers
 
-### Development tools
+   - Shell syntax for package management, tests and deployment.
+   - Solidity for smart contract development for an ERC20 Token.
 
-1. Hardhat
-2. Foundry
-3. Open Zappelin
-4. Ethers
-5. Metamask
-6. Yarn / Npm
+   * Open Zappelin
 
-### Workflow enviroments
+2. Front-end user interface and communication with blockchain.
+   2.1 NextJs react based website
+   2.2
+
+### Used libraries
+
+2. Yarn / Npm
+3. web3uikit
+4.
+
+### Workflow tools / environments
 
 1. Github
 2. VSCode
+3. Metamask
 
 </p>
 </details>
