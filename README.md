@@ -31,25 +31,24 @@ $ yarn
 1. Back-end blockchain smart contract development.
 
    - Javascript for deployment, unit-testing and configurations.
+
      - Hardhat
      - Foundry
-
-   * Ethers
+     - Ethers
 
    - Shell syntax for package management, tests and deployment.
-   - Solidity for smart contract development for an ERC20 Token.
 
-   * Open Zappelin
+     - Yarn / Npm
+
+   - Smart contract development for an ERC20 Token.
+
+     - Solidity
+     - Open Zappelin
 
 2. Front-end user interface and communication with blockchain.
    2.1 NextJs react based website
-   2.2
 
-### Used libraries
-
-2. Yarn / Npm
-3. web3uikit
-4.
+   - web3uikit
 
 ### Workflow tools / environments
 
