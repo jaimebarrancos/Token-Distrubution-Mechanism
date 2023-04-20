@@ -4,9 +4,9 @@ require("dotenv").config()
 console.log(process.env)
 const INNITIAL_SUPPLY = 10 * 10 ** 18
 
-task("accounts", "Prints the list of accounts", async () => {
-  console.log(process.env)
-})
+// task("accounts", "Prints the list of environment variables", async () => {
+//   console.log(process.env)
+// })
 
 module.exports = {
   gasReporter: {
