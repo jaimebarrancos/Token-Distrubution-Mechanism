@@ -32,8 +32,8 @@ export default function Join() {
 
   const { data, error, fetch, isFetching, isLoading } = useWeb3ExecuteFunction({
     abi: abi,
-    contractAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    functionName: "name",
+    contractAddress: contractAddresses[chainId][0],
+    functionName: "testNumber",
     params: {},
   })
 

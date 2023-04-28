@@ -5,7 +5,7 @@
 const { deployments, getNamedAccounts, network } = require("hardhat")
 
 async function deployFunction() {
-  console.log("--- deploying ...")
+  console.log("--- running deploy scripts ...")
   hre.getNamedAccounts
   hre.deployments
 
@@ -13,7 +13,7 @@ async function deployFunction() {
   const { deployer } = await getNamedAccounts()
   //const chainId = network.config.chainId
 
-  await deploy("TokenDistrubutionMechanism", {
+  await deploy("Distrubution", {
     from: deployer,
     args: [],
     log: true,

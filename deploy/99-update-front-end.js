@@ -5,20 +5,20 @@ const FRONT_END_ADDRESSES_FILE = "token-distribution-mechanism/constants/contrac
 
 module.exports = async function () {
   if (process.env.UPDATE_FRONT_END) {
-    console.log("updating")
+    console.log(" --- updating abi & addresses---")
     updateContractAddressess()
     updateAbi()
   }
 }
 
 async function updateAbi() {
-  const contract = await ethers.getContractFactory("TokenDistrubutionMechanism")
+  const contract = await ethers.getContractFactory("Distrubution")
   fs.writeFileSync(FRONT_END_ABI_FILE, contract.interface.format(ethers.utils.FormatTypes.json))
 }
 
 //depends on the network
 async function updateContractAddressess() {
-  const contract = await ethers.getContractFactory("TokenDistrubutionMechanism")
+  const contract = await ethers.getContractFactory("Distrubution")
   DistrubutionContract = await contract.deploy()
 
   const currentAddresses = JSON.parse(fs.readFileSync(FRONT_END_ADDRESSES_FILE, "utf8"))
