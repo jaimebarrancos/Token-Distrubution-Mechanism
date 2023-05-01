@@ -17,8 +17,5 @@ export const TextBox = styled.div`
 export const StyledGrid = styled.div`
   display: grid;
 
-  height: 400px;
   background-color: "#263030";
-  justify-content: "center";
-  align-items: "center";
 `

@@ -5,6 +5,7 @@ import abi from "../constants/abi.json"
 import contractAddresses from "../constants/contractAddresses.json"
 import { ethers } from "ethers"
 import { Loading } from "web3uikit"
+import Button from "@mui/material/Button"
 
 export default function Join() {
   const { chainId: chainIdHex, isWeb3Enabled, account } = useMoralis()
@@ -43,12 +44,12 @@ export default function Join() {
   return (
     <div>
       <div>
-        <button onClick={fetch} disabled={isFetching}>
+        <Button variant="contained" onClick={fetch} disabled={isFetching}>
           Fetch data
-        </button>
+        </Button>
         Entry value is: {isLoading ? "loading..." : entryFee}
       </div>
-      <button onClick={simpleUpdateUI}>print data</button>
+      <Button onClick={simpleUpdateUI}>print data</Button>
     </div>
   )
 }

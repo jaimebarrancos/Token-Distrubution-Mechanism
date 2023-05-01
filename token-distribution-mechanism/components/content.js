@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper"
 import Grid from "@mui/material/Grid"
 import { TextBox, StyledGrid } from "./grid-style/gridcontent"
 import Button from "@mui/material/Button"
+import Join from "components/join.js"
 
 const MyComponent = styled("div")({
   typography: "body2",
@@ -18,34 +19,24 @@ const MyComponent = styled("div")({
 
 export default function BasicGrid() {
   return (
-    <div
-      style={{
-        display: "grid",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "30em",
-        width: "100%",
-      }}
-    >
+    <div style={{}}>
       <div
         style={{
           display: "grid",
-          backgroundColor: "cyan",
+          gridTemplateColumns: "1fr 1fr 1fr",
+          gridTemplateRows: "8em 4em",
+          padding: "10px",
           alignItems: "center",
           justifyContent: "center",
-          height: "100%",
-          width: "100%",
+          height: "18em",
+          backgroundColor: "#2196F3",
         }}
       >
         <TextBox>Styled text box</TextBox>
-        <StyledGrid container spacing={0}>
-          <center>
-            <Button variant="contained">SPECIAL BUTTON</Button>
-            <div>Simple text</div>
-            <MyComponent>MyComponent</MyComponent>
-          </center>
-        </StyledGrid>
-        <StyledGrid>sss</StyledGrid>
+        <Button variant="contained">SPECIAL BUTTON</Button>
+        <MyComponent>To be implemented</MyComponent>
+        <StyledGrid>GET ENTRANCE FEE</StyledGrid>
+        <Join>DIV NUMBER 6</Join>
       </div>
     </div>
   )

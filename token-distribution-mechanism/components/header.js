@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
+import { ConnectButton } from "web3uikit"
 
 export default function Header() {
   return (
@@ -19,7 +20,9 @@ export default function Header() {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Token Distrbution Mechanism - Jaime
         </Typography>
+
         <Button color="inherit">About</Button>
+        <ConnectButton></ConnectButton>
       </Toolbar>
     </AppBar>
   )
