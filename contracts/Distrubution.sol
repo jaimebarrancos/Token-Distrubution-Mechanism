@@ -29,6 +29,7 @@ contract Distrubution is TokenDistrubutionMechanism,
         
     /* State Variables*/
     // Distrubution Mechanism variables
+    uint256 private immutable baseEntryFee;
     uint8 private constant NEW_USER_POINTS = 5;
     uint8 private constant NEW_USER_MINTED_TOKENS = 10; 
     address private s_owner;
@@ -41,7 +42,6 @@ contract Distrubution is TokenDistrubutionMechanism,
 
     //Chainlink variables
     mapping(uint256 => RequestStatus) public s_requests; /* requestId --> requestStatus */
-
     uint256[] public requestIds;
     uint256 public lastRequestId;
     uint64 s_subscriptionId = 1;
@@ -53,11 +53,12 @@ contract Distrubution is TokenDistrubutionMechanism,
 
     VRFCoordinatorV2Interface private immutable i_vrfCoordinator;
 
-    constructor()
+    constructor(uint256 entryFee)
         VRFConsumerBaseV2(0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625)
         ConfirmedOwner(msg.sender){      
 
         s_owner = msg.sender;
+        baseEntryFee = entryFee;
 
         //i_vrfCoordinator = VRFCoordinatorV2Interface(vrfCoordinatorV2);
         i_vrfCoordinator = VRFCoordinatorV2Interface(
@@ -123,6 +124,9 @@ contract Distrubution is TokenDistrubutionMechanism,
         return correctNumber;
     }
 
+    function getBaseEntryFee() public view returns (uint256){
+        return baseEntryFee;
+    }
     //on timestamp distribute percentage of tokens (as reward for some users) --> chainlink?
     //withdraw token value
 

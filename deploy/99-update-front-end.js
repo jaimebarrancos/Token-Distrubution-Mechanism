@@ -2,6 +2,7 @@ const { ethers } = require("hardhat")
 const fs = require("fs")
 const FRONT_END_ABI_FILE = "token-distribution-mechanism/constants/abi.json"
 const FRONT_END_ADDRESSES_FILE = "token-distribution-mechanism/constants/contractAddresses.json"
+require("dotenv").config()
 
 module.exports = async function () {
   if (process.env.UPDATE_FRONT_END) {
@@ -19,7 +20,7 @@ async function updateAbi() {
 //depends on the network
 async function updateContractAddressess() {
   const contract = await ethers.getContractFactory("Distrubution")
-  DistrubutionContract = await contract.deploy()
+  DistrubutionContract = await contract.deploy(process.env.ENTRY_FEE)
 
   const currentAddresses = JSON.parse(fs.readFileSync(FRONT_END_ADDRESSES_FILE, "utf8"))
   const chainId = network.config.chainId.toString()

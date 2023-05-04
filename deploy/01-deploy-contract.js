@@ -2,6 +2,7 @@
 //main func
 //call main func
 
+const { utils } = require("ethers")
 const { deployments, getNamedAccounts, network } = require("hardhat")
 
 async function deployFunction() {
@@ -11,11 +12,11 @@ async function deployFunction() {
 
   const { deploy, log } = deployments
   const { deployer } = await getNamedAccounts()
-  //const chainId = network.config.chainId
+  const entryFee = utils.parseUnits("1", 18)
 
   await deploy("Distrubution", {
     from: deployer,
-    args: [],
+    args: [entryFee],
     log: true,
   })
 }
