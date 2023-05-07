@@ -1,0 +1,73 @@
+.BorderEffect {
+  padding: 2rem;
+  text-decoration: none;
+  display: inline-block;
+  background-color: purple;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2196f3;
+  letter-spacing: 0.4rem;
+  overflow: hidden;
+}
+
+.BorderEffect:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 0.4rem;
+  background-color: #2196f3;
+  transition: all 0.7s;
+}
+
+.BorderEffect:hover:before {
+  left: 0;
+}
+
+.BorderEffect:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 0.4rem;
+  background-color: #2196f3;
+  transition: all 0.7s;
+}
+
+.BorderEffect:hover:after {
+  right: 0;
+}
+
+.BorderEffect span:before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  right: 0;
+  width: 0.4rem;
+  height: 100%;
+  background-color: #2196f3;
+  transition: all 0.7s;
+}
+
+.BorderEffect:hover span:before {
+  top: 0;
+}
+
+.BorderEffect span:after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 0.4rem;
+  height: 100%;
+  background-color: #2196f3;
+  transition: all 0.7s;
+}
+
+.BorderEffect:hover span:after {
+  bottom: 0;
+}
