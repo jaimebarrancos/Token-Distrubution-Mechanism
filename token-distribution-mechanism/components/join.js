@@ -7,6 +7,7 @@ import { ethers } from "ethers"
 import { Loading } from "web3uikit"
 import Button from "@mui/material/Button"
 import { ConstructionOutlined } from "@mui/icons-material"
+import buttonEffect from "./grid-style/fullbordereffect.module.css"
 
 export default function Join() {
   const { chainId: chainIdHex, isWeb3Enabled, account } = useMoralis()
@@ -19,7 +20,7 @@ export default function Join() {
     console.log("updating UI:   " + data)
     console.log("current account:   " + account)
   }
-
+  //<Button onClick={simpleUpdateUI}>print data</Button>
   const { data, error, fetch, isFetching, isLoading } = useWeb3ExecuteFunction({
     abi: abi,
     contractAddress:
@@ -39,20 +40,19 @@ export default function Join() {
     if (data != null) {
       console.log("useEffect succeded " + data)
 
-      setEntryFee(data)
+      setEntryFee(ethers.utils.formatEther(data.toString()))
     }
   }, [data])
 
   return (
     <div>
       <div>
-        <Button variant="contained" disabled={isFetching}>
+        <Button className={buttonEffect.BorderEffect} variant="contained" disabled={isFetching}>
           {entryFee.toString() == ""
             ? "Please connect a wallet!"
-            : "Entry fee: " + entryFee.toString()}
+            : "Please transfer " + entryFee.toString() + " eth to join."}
         </Button>
       </div>
-      <Button onClick={simpleUpdateUI}>print data</Button>
     </div>
   )
 }

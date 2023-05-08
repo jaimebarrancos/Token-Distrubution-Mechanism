@@ -18,7 +18,7 @@ export default function Header() {
         </IconButton>
 
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Token Distrbution Mechanism - Jaime
+          Smart contract caller
         </Typography>
 
         <Button color="inherit">About</Button>

@@ -28,22 +28,24 @@ export default function BasicGrid({ BorderEffect }) {
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
           gridTemplateRows: "8em 4em",
-          padding: "10px",
+          gridGap: "1em",
+          padding: "1em",
           alignItems: "center",
           justifyContent: "center",
           height: "18em",
           backgroundColor: "#2196F3",
+          marginTop: "1em",
         }}
       >
         <TextBox>Styled text box</TextBox>
-        <Button className={buttonEffect.BorderEffect} variant="contained">
-          SPECIAL BUTTON
-        </Button>
-        <button className={defaultButton.BorderEffect}>Simpler Button</button>
-        <StyledGrid>GET ENTRANCE FEE</StyledGrid>
         <Join>DIV NUMBER 6</Join>
+
+        <div className={buttonEffect.BorderEffect}> SPECIAL EFFECT</div>
+
+        <div></div>
+        <StyledGrid>GET ENTRANCE FEE</StyledGrid>
+        <button className={defaultButton.BorderEffect}>Simpler Button</button>
       </div>
-      <div className={buttonEffect.BorderEffect}> SPECIAL EFFECT</div>
     </div>
   )
 }
