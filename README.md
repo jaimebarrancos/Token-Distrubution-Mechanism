@@ -34,7 +34,7 @@ npm run dev
 yarn dev
 ```
 
-Access your website with: in `http://localhost:3000/´
+Access your website: `http://localhost:3000/`
 
 <details>
 
