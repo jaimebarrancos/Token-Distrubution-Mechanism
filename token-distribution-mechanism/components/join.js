@@ -6,48 +6,51 @@ import contractAddresses from "../constants/contractAddresses.json"
 import { ethers } from "ethers"
 import { Loading } from "web3uikit"
 import Button from "@mui/material/Button"
+import { ConstructionOutlined } from "@mui/icons-material"
 
 export default function Join() {
   const { chainId: chainIdHex, isWeb3Enabled, account } = useMoralis()
   const chainId = parseInt(chainIdHex)
 
-  const [entryFee, setEntryFee] = useState("0")
-
-  // async function updateUI() {
-  //   console.log("updating UI" + (await joinMechanism()))
-  //   let entranceFeeCall = (await joinMechanism()).toString()
-  //   setEntranceFee(entranceFeeCall)
-  // }
-
-  // useEffect(() => {
-  //   if (isWeb3Enabled) {
-  //     //updateUI()
-  //   }
-  // }, [isWeb3Enabled])
+  const [entryFee, setEntryFee] = useState("")
 
   async function simpleUpdateUI() {
     console.log("\n ------LOGS----- \n \nerror message:   " + error)
     console.log("updating UI:   " + data)
     console.log("current account:   " + account)
-    console.log("is loading?:   " + isLoading)
-    let newEntryFee = data.toString()
-    setEntryFee(newEntryFee)
   }
 
   const { data, error, fetch, isFetching, isLoading } = useWeb3ExecuteFunction({
     abi: abi,
-    contractAddress: "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", //contractAddresses[chainId][0],
+    contractAddress:
+      contractAddresses[chainId] === undefined
+        ? console.log("not connected to metamask")
+        : contractAddresses[chainId][0],
     functionName: "getBaseEntryFee",
     params: {},
   })
 
+  useEffect(() => {
+    isWeb3Enabled ? (() => fetch())() : setEntryFee("")
+  }, [isWeb3Enabled]) // wait for wallet
+
+  useEffect(() => {
+    console.log("effecting...")
+    if (data != null) {
+      console.log("useEffect succeded " + data)
+
+      setEntryFee(data)
+    }
+  }, [data])
+
   return (
     <div>
       <div>
-        <Button variant="contained" onClick={fetch} disabled={isFetching}>
-          Fetch data
+        <Button variant="contained" disabled={isFetching}>
+          {entryFee.toString() == ""
+            ? "Please connect a wallet!"
+            : "Entry fee: " + entryFee.toString()}
         </Button>
-        Entry value is: {isLoading ? "loading..." : entryFee}
       </div>
       <Button onClick={simpleUpdateUI}>print data</Button>
     </div>

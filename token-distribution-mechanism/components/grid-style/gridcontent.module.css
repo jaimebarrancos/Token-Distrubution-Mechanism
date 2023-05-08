@@ -1,0 +1,50 @@
+.gridStyle {
+  height: 500px;
+  background-color: "#263030";
+  justify-content: "center";
+  align-items: "center";
+}
+
+.BorderEffect {
+  padding: 2rem;
+  text-decoration: none;
+  display: inline-block;
+  background-color: purple;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.4rem;
+  overflow: hidden;
+}
+
+.BorderEffect:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 0.4rem;
+  background-color: white;
+  transition: all 0.7s;
+}
+
+.BorderEffect:hover:before {
+  left: 0;
+}
+
+.BorderEffect:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 0.4rem;
+  background-color: white;
+  transition: all 0.7s;
+}
+
+.BorderEffect:hover:after {
+  right: 0;
+}

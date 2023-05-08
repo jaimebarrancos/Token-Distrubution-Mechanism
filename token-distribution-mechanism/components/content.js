@@ -3,9 +3,12 @@ import { styled } from "@mui/material/styles"
 import Box from "@mui/material/Box"
 import Paper from "@mui/material/Paper"
 import Grid from "@mui/material/Grid"
-import { TextBox, StyledGrid } from "./grid-style/gridcontent"
 import Button from "@mui/material/Button"
 import Join from "components/join.js"
+
+import { TextBox, StyledGrid } from "./grid-style/gridcontent"
+import buttonEffect from "./grid-style/fullbordereffect.module.css"
+import defaultButton from "./grid-style/gridcontent.module.css"
 
 const MyComponent = styled("div")({
   typography: "body2",
@@ -17,9 +20,9 @@ const MyComponent = styled("div")({
   direction: "column",
 })
 
-export default function BasicGrid() {
+export default function BasicGrid({ BorderEffect }) {
   return (
-    <div style={{}}>
+    <div>
       <div
         style={{
           display: "grid",
@@ -33,11 +36,14 @@ export default function BasicGrid() {
         }}
       >
         <TextBox>Styled text box</TextBox>
-        <Button variant="contained">SPECIAL BUTTON</Button>
-        <MyComponent>To be implemented</MyComponent>
+        <Button className={buttonEffect.BorderEffect} variant="contained">
+          SPECIAL BUTTON
+        </Button>
+        <button className={defaultButton.BorderEffect}>Simpler Button</button>
         <StyledGrid>GET ENTRANCE FEE</StyledGrid>
         <Join>DIV NUMBER 6</Join>
       </div>
+      <div className={buttonEffect.BorderEffect}> SPECIAL EFFECT</div>
     </div>
   )
 }
