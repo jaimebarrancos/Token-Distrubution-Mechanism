@@ -8,7 +8,8 @@ import Join from "components/join.js"
 
 import { TextBox, StyledGrid } from "./grid-style/gridcontent"
 import buttonEffect from "./grid-style/fullbordereffect.module.css"
-import defaultButton from "./grid-style/gridcontent.module.css"
+import defaultButton from "./grid-style/default-button.module.css"
+import topGrid from "./grid-style/top-grid.module.css"
 
 const MyComponent = styled("div")({
   typography: "body2",
@@ -23,20 +24,7 @@ const MyComponent = styled("div")({
 export default function BasicGrid({ BorderEffect }) {
   return (
     <div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gridTemplateRows: "8em 4em",
-          gridGap: "1em",
-          padding: "1em",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "18em",
-          backgroundColor: "#2196F3",
-          marginTop: "1em",
-        }}
-      >
+      <div className={topGrid["top-grid"]}>
         <TextBox>Styled text box</TextBox>
         <Join>DIV NUMBER 6</Join>
 
@@ -46,6 +34,8 @@ export default function BasicGrid({ BorderEffect }) {
         <StyledGrid>GET ENTRANCE FEE</StyledGrid>
         <button className={defaultButton.BorderEffect}>Simpler Button</button>
       </div>
+      <div className={topGrid["top-grid"]}></div>
+      <div className={topGrid["top-grid"]}></div>
     </div>
   )
 }

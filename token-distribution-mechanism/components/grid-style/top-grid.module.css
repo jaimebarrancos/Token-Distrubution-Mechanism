@@ -1,0 +1,13 @@
+.top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 8em 4em;
+  column-gap: 1em;
+  row-gap: 1em;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+  height: 18em;
+  background-color: #2196f3;
+  margin-top: 1em;
+}
