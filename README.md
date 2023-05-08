@@ -1,8 +1,10 @@
 # Token Distrubution Mechanism
 
-This project demonstrates an ERC20 Token creation with a distrubution protocol whilst communicating with a simple webpage.
+This project demonstrates an ERC20 Token creation with a distrubution protocol whilst communicating with a webpage.
 
-It contains unit-testing, smart contracts, a front end simple website, penetration testing and custom configs.
+It contains unit-testing, smart contracts, a styled Next.js website, penetration testing and custom configs.
+
+## Getting Started
 
 To download dependencies you can use :
 
@@ -14,6 +16,26 @@ Or:
 
 ```
 $ yarn
+```
+
+Start a local server to interact with:
+
+```bash
+yarn hardhat node
+```
+
+Open a new terminal and go to the front-end section of the repo:
+
+```bash
+code /token-distribution-mechanism
+```
+
+Open a terminal in the front-end section and start your local server:
+
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
 <details>
@@ -40,14 +62,14 @@ $ yarn
 
      - Yarn / Npm
 
-   - Smart contract development for an ERC20 Token.
+   - Smart contract development libraries and standards.
 
      - Solidity
      - Open Zappelin
 
 2. Front-end user interface and communication with blockchain.
 
-   - Simple and pretty website
+   - Custom styled website
 
      - NextJs react
      - web3uikit
