@@ -6,7 +6,7 @@ It contains unit-testing, smart contracts, a styled Next.js website, penetration
 
 ## Getting Started
 
-To download dependencies you can use :
+### To download dependencies you can use :
 
 ```
 $ npm install
@@ -18,19 +18,19 @@ Or:
 $ yarn
 ```
 
-Start a local server to interact with:
+### Start a local server to interact with:
 
 ```bash
 yarn hardhat node
 ```
 
-Open a new terminal and go to the front-end section of the repo:
+### Open a new terminal and go to the front-end section of the repo:
 
 ```bash
 code /token-distribution-mechanism
 ```
 
-Open a terminal in the front-end section and start your local server:
+# Open a terminal in the front-end section and start your local server:
 
 ```bash
 npm run dev
