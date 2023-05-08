@@ -20,7 +20,7 @@ Start a local server to interact with:
 yarn hardhat node
 ```
 
-Open a new terminal and go to the front-end section of the repo:
+Open up the front-end section of the repo:
 
 ```bash
 code /token-distribution-mechanism
@@ -33,6 +33,8 @@ npm run dev
 # or
 yarn dev
 ```
+
+Access your website with: in `http://localhost:3000/´
 
 <details>
 
