@@ -5,8 +5,9 @@ import styles from "@/styles/Home.module.css"
 import { useMoralis } from "react-moralis"
 import Header from "../../components/header"
 import Join from "../../components/join"
-import BasicGrid from "../../components/content"
+import MainGrid from "../../components/content"
 import Footer from "../../components/footer"
+import UpperGrid from "../../components/upper-grid"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,7 +21,8 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header />
-        <BasicGrid />
+        <UpperGrid />
+        <MainGrid />
         <Footer />
       </div>
     </>

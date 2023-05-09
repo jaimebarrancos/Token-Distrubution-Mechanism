@@ -1,0 +1,16 @@
+.upper-grid {
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr;
+  grid-template-rows: 12em;
+  column-gap: 1em;
+  row-gap: 1em;
+
+  align-items: center;
+  justify-content: center;
+  background-color: #cadeee;
+
+  text-align: center;
+  font-size: larger;
+  font-family: Rockwell;
+  color: black;
+}

@@ -16,17 +16,18 @@ export default function Join() {
   const [entryFee, setEntryFee] = useState("")
 
   async function simpleUpdateUI() {
-    console.log("\n ------LOGS----- \n \nerror message:   " + error)
+    console.log(
+      "\n ------LOGS----- \n \nerror message:   " + error + "\n " + contractAddresses[31337][0]
+    )
     console.log("updating UI:   " + data)
     console.log("current account:   " + account)
   }
-  //<Button onClick={simpleUpdateUI}>print data</Button>
   const { data, error, fetch, isFetching, isLoading } = useWeb3ExecuteFunction({
     abi: abi,
     contractAddress:
       contractAddresses[chainId] === undefined
         ? console.log("not connected to metamask")
-        : contractAddresses[chainId][0],
+        : contractAddresses[31337][0], //contractAddresses[chainId][0],
     functionName: "getBaseEntryFee",
     params: {},
   })
@@ -43,6 +44,8 @@ export default function Join() {
       setEntryFee(ethers.utils.formatEther(data.toString()))
     }
   }, [data])
+
+  //        <Button onClick={simpleUpdateUI}>print data</Button>
 
   return (
     <div>

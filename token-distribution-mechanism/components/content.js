@@ -11,25 +11,18 @@ import buttonEffect from "./grid-style/fullbordereffect.module.css"
 import defaultButton from "./grid-style/default-button.module.css"
 import topGrid from "./grid-style/top-grid.module.css"
 
-const MyComponent = styled("div")({
-  typography: "body2",
-  backgroundColor: "green",
-  padding: 8,
-  borderRadius: 4,
-  alignItems: "center",
-  alignContent: "center",
-  direction: "column",
-})
-
-export default function BasicGrid({ BorderEffect }) {
+export default function MainGrid() {
   return (
     <div>
       <div className={topGrid["top-grid"]}>
-        <TextBox>Styled text box</TextBox>
-        <Join>DIV NUMBER 6</Join>
+        <div></div>
 
+        <Join></Join>
+      </div>
+
+      <div className={topGrid["top-grid"]}>
         <div className={buttonEffect.BorderEffect}> SPECIAL EFFECT</div>
-
+        <TextBox>Styled text box</TextBox>
         <div></div>
         <StyledGrid>GET ENTRANCE FEE</StyledGrid>
         <button className={defaultButton.BorderEffect}>Simpler Button</button>
